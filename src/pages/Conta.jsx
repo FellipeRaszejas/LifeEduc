@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Topbar from '../components/topbar'
 import {
-  BookOpen,
-  Search,
   CircleUser,
   Mail,
   Lock,
@@ -75,10 +74,6 @@ function CampoSenha({ id, valor, onChange, placeholder, erro, autoComplete }) {
 
 export default function Conta() {
   const navigate = useNavigate()
-  const buscaRef = useRef(null)
-
-  const [busca, setBusca] = useState('')
-
   const [login, setLogin] = useState({ email: '', senha: '', manter: true })
   const [errosLogin, setErrosLogin] = useState({})
   const [avisoLogin, setAvisoLogin] = useState('')
@@ -93,23 +88,6 @@ export default function Conta() {
   })
   const [errosCadastro, setErrosCadastro] = useState({})
   const [sucessoCadastro, setSucessoCadastro] = useState('')
-
-  // Atalho Ctrl/Cmd + K foca na busca
-  useEffect(() => {
-    const atalho = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault()
-        buscaRef.current?.focus()
-      }
-    }
-    window.addEventListener('keydown', atalho)
-    return () => window.removeEventListener('keydown', atalho)
-  }, [])
-
-  const buscar = (e) => {
-    e.preventDefault()
-    if (busca.trim()) navigate(`/curso?busca=${encodeURIComponent(busca.trim())}`)
-  }
 
   const mudarLogin = (campo) => (e) =>
     setLogin((f) => ({ ...f, [campo]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
@@ -145,30 +123,9 @@ export default function Conta() {
 
   return (
     <div className="conta">
-      {/* Barra superior */}
-      <header className="topbar">
-        <div className="logo">
-          <span className="logo__icone">
-            <BookOpen size={20} />
-          </span>
-          <span className="logo__nome">LifeEduc</span>
-        </div>
-
-        <form className="busca" onSubmit={buscar} role="search">
-          <Search size={16} />
-          <input
-            ref={buscaRef}
-            type="search"
-            value={busca}
-            onChange={(e) => setBusca(e.target.value)}
-            placeholder="O que você quer aprender hoje?"
-            aria-label="Buscar cursos"
-          />
-          <kbd>⌘ K</kbd>
-        </form>
-
+      <Topbar>
         <span className="selo-seguro">Acesso seguro • Conta gratuita</span>
-      </header>
+      </Topbar>
 
       {/* Título */}
       <section className="conta__titulo">
