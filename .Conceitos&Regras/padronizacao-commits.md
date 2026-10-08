@@ -1,0 +1,139 @@
+# Padronização de Commits: Projeto ODS 4 (Educação de Qualidade)
+
+Padrão adotado: **Conventional Commits**, adaptado ao projeto em React. Benefícios: histórico organizado, facilidade de revisão e geração automática de changelog.
+
+## Estrutura
+
+```
+<tipo>(<escopo>): <descrição curta no imperativo>
+
+[corpo opcional: o que mudou e por quê]
+
+[rodapé opcional: issue, breaking change]
+```
+
+**Regras da primeira linha:**
+
+- Máximo de 72 caracteres
+- Letra minúscula, sem ponto final
+- Verbo no imperativo (ex.: "adiciona", "corrige", "remove")
+- Idioma único em todo o projeto (português)
+
+## Tipos
+
+| Tipo | Quando usar |
+|---|---|
+| `feat` | Nova funcionalidade |
+| `fix` | Correção de bug |
+| `docs` | Documentação (README, comentários) |
+| `style` | Formatação, sem mudar lógica (espaços, ponto e vírgula) |
+| `refactor` | Reestruturação de código sem mudar comportamento |
+| `perf` | Melhoria de desempenho |
+| `test` | Criação ou ajuste de testes |
+| `build` | Dependências, Vite/Webpack, package.json |
+| `ci` | Pipelines e automações (GitHub Actions) |
+| `chore` | Tarefas de manutenção que não afetam o código de produção |
+| `revert` | Reverte um commit anterior |
+
+## Escopos (baseados nos módulos da aplicação)
+
+| Escopo | Módulo |
+|---|---|
+| `relatos` | Relato de problemas de infraestrutura (goteiras, estrutura deteriorada) |
+| `monitoramento` | Acompanhamento acadêmico |
+| `estudos` | Área de estudos (aulas, conteúdos, estilo Khan Academy) |
+| `atividades` | Exercícios e avaliações |
+| `auth` | Login, cadastro e perfis |
+| `ui` | Componentes visuais compartilhados |
+| `layout` | Header, footer, navegação, rotas |
+| `api` | Integração com back-end ou serviços |
+| `config` | Configurações gerais do projeto |
+| `docs` | Documentação da entrega (problema, ODS, público-alvo, solução, valor) |
+
+## Exemplos
+
+```
+feat(relatos): adiciona formulário de relato de problema de infraestrutura
+feat(relatos): permite anexar foto ao relato
+feat(estudos): cria página de listagem de trilhas de estudo
+feat(atividades): implementa questões de múltipla escolha com feedback
+feat(monitoramento): exibe gráfico de desempenho do aluno
+fix(auth): corrige redirecionamento após login
+fix(relatos): valida campo de localização obrigatório
+refactor(ui): extrai componente Button para pasta compartilhada
+style(layout): ajusta espaçamento do header
+docs: adiciona seção de ODS e público-alvo no README
+build: instala react-router-dom
+chore: configura ESLint e Prettier
+test(atividades): adiciona testes do componente Questao
+```
+
+**Com corpo e rodapé:**
+
+```
+feat(relatos): adiciona categorias de problema
+
+Inclui categorias: goteira, iluminação, mobiliário, banheiros,
+acessibilidade e outros. Facilita a triagem dos relatos.
+
+Closes #12
+```
+
+**Breaking change:**
+
+```
+refactor(api)!: altera formato de resposta da lista de relatos
+
+BREAKING CHANGE: o campo "data" agora é "criadoEm" (ISO 8601).
+```
+
+## Padronização de branches
+
+```
+main              → versão estável/entrega
+develop           → integração
+feat/relatos-formulario
+fix/auth-redirect
+docs/readme-ods
+```
+
+Formato: `<tipo>/<descricao-curta-em-kebab-case>`
+
+## Boas práticas
+
+1. **Um commit = uma mudança lógica.** Evite commits do tipo "ajustes gerais".
+2. **Commite com frequência**, em passos pequenos.
+3. **Referencie issues** no rodapé (`Closes #n`, `Refs #n`).
+4. **Não commite** `node_modules`, `.env` ou arquivos de build (use `.gitignore`).
+
+## Automação (opcional, mas recomendado)
+
+Instalação:
+
+```bash
+npm install -D @commitlint/cli @commitlint/config-conventional husky
+```
+
+Arquivo `commitlint.config.js`:
+
+```js
+export default {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'scope-enum': [2, 'always', [
+      'relatos', 'monitoramento', 'estudos', 'atividades',
+      'auth', 'ui', 'layout', 'api', 'config', 'docs'
+    ]],
+    'subject-case': [0],
+  },
+};
+```
+
+Ativar o hook:
+
+```bash
+npx husky init
+echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+```
+
+Com isso, qualquer commit fora do padrão é bloqueado antes de ser criado.
