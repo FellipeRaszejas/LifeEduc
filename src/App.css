@@ -5171,3 +5171,258 @@ button {
     min-height: 44px;
   }
 }
+/* ==========================================================================
+   PÁGINA CONQUISTAS (colar no fim do App.css)
+   Usa .secao-topo, .btn-branco e .progresso__* da Home.
+   ========================================================================== */
+.con {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.con__titulo {
+  margin-bottom: 16px;
+}
+
+.con__titulo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.con .btn-branco,
+.con .link {
+  text-decoration: none;
+}
+
+/* Destaque */
+.con-hero {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 26px;
+  padding: 22px 28px;
+  color: var(--branco);
+  background: var(--azul-900);
+  border-radius: var(--raio);
+}
+
+.con-hero__icone {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+}
+
+.con-hero__texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.con-hero__texto p {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+
+.con-hero__texto h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.con-hero__texto small {
+  font-size: 11px;
+  opacity: 0.88;
+}
+
+.con__contagem {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--azul-600);
+}
+
+/* Medalhas */
+.con__medalhas,
+.con__metas {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.con__medalhas {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 28px;
+}
+
+.con-medalha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 22px 14px 16px;
+  text-align: center;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.con-medalha__icone {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+}
+
+.con-medalha__icone--azul {
+  color: var(--azul-600);
+  background: var(--azul-100);
+}
+
+.con-medalha__icone--roxo {
+  color: var(--roxo-600);
+  background: var(--roxo-100);
+}
+
+.con-medalha__icone--verde {
+  color: var(--verde-700);
+  background: var(--verde-100);
+}
+
+.con-medalha h3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.con-medalha p {
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+.con-medalha small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 9.5px;
+  color: var(--verde-700);
+}
+
+/* Próximas conquistas */
+.con__metas {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.con-meta {
+  padding: 16px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.con-meta__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.con-meta__icone {
+  flex-shrink: 0;
+  color: var(--azul-600);
+}
+
+.con-meta__pilula {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  font-size: 9px;
+  color: var(--texto-suave);
+  background: var(--fundo);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.con-meta h3 {
+  margin: 12px 0 2px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.con-meta p {
+  margin-bottom: 10px;
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+.con-meta strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--azul-600);
+}
+
+.con__fim {
+  margin-top: 26px;
+  font-size: 11px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.con__fim .link {
+  margin-left: 6px;
+}
+
+@media (max-width: 900px) {
+  .con__metas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .con-hero {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .con-hero__icone {
+    width: 64px;
+    height: 64px;
+  }
+
+  .con-hero__texto h2 {
+    font-size: 20px;
+  }
+
+  .con .btn-branco {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .con__medalhas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .con__metas {
+    grid-template-columns: 1fr;
+  }
+}
