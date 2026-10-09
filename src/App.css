@@ -4079,3 +4079,422 @@ button {
     flex-wrap: wrap;
   }
 }
+/* ==========================================================================
+   PÁGINA COMUNIDADE (colar no fim do App.css)
+   Usa .segmentos e .modal* do Planejamento, .sr-only da página Oportunidades
+   e .usuario__avatar da Topbar.
+   ========================================================================== */
+.com {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.com__titulo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.com__titulo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.com .btn-azul,
+.com .btn-contorno,
+.com .btn-branco {
+  text-decoration: none;
+}
+
+.com .btn-azul:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Busca */
+.com__busca {
+  margin-bottom: 20px;
+}
+
+.com__busca label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.com__busca-linha {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.com__busca-linha .campo {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Grade */
+.com__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 16px;
+  align-items: start;
+}
+
+.com__feed {
+  min-width: 0;
+}
+
+.com__feed-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.com__feed-topo h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.com__ordem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--azul-600);
+}
+
+.com__ordem select {
+  padding: 4px 16px 4px 4px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--azul-600);
+  background: none;
+  border: 0;
+  outline-offset: 2px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.com__ordem svg {
+  position: absolute;
+  right: 2px;
+  pointer-events: none;
+}
+
+.com__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.com__vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--texto-suave);
+}
+
+/* Publicação */
+.com-post__topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.com-post__autor {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.com-post__autor strong {
+  font-size: 12px;
+}
+
+.com-post__autor small {
+  font-size: 10px;
+  color: var(--texto-suave);
+}
+
+.com-post__menu {
+  position: relative;
+}
+
+.com-post__opcoes {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  z-index: 5;
+  min-width: 130px;
+  padding: 4px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+}
+
+.com-post__opcoes a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  font-size: 12px;
+  color: var(--texto);
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.com-post__opcoes a:hover {
+  background: var(--fundo);
+}
+
+.com-post__titulo {
+  margin: 14px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.com-post__texto {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.com-post__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 14px;
+}
+
+.com-acao {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  font-size: 11px;
+  color: var(--texto-suave);
+  background: none;
+  border: 0;
+}
+
+.com-acao:hover,
+.com-acao--ativa {
+  color: var(--azul-600);
+}
+
+.com-educador {
+  margin-top: 14px;
+  padding: 12px 14px;
+  color: var(--verde-700);
+  background: var(--verde-100);
+  border: 1px solid #cdeadb;
+  border-radius: var(--raio-campo);
+}
+
+.com-educador strong {
+  font-size: 10.5px;
+}
+
+.com-educador p {
+  margin: 6px 0 8px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--texto);
+}
+
+.com-educador .link {
+  font-size: 10.5px;
+  color: var(--verde-700);
+}
+
+/* Respostas */
+.com-respostas {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--borda);
+}
+
+.com-respostas__item {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  background: var(--fundo);
+  border-radius: 8px;
+}
+
+.com-respostas__item strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+
+.com-respostas__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.com__texto {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  resize: vertical;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-campo);
+}
+
+.com__texto:focus {
+  border-color: var(--azul-600);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(37, 87, 230, 0.15);
+}
+
+.com__moderacao {
+  margin-top: 10px;
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+/* Lateral */
+.com__lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.com__lateral-titulo {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.com-unida {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 20px;
+  color: var(--branco);
+  background: var(--azul-600);
+  border-radius: var(--raio);
+}
+
+.com-unida h2 {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.com-unida p {
+  margin-bottom: 6px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+.com-unida .btn-branco {
+  width: 100%;
+  justify-content: center;
+}
+
+.com-unida small {
+  font-size: 10.5px;
+  opacity: 0.9;
+}
+
+.com-combinados {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.com-combinados li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.com-combinados svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--verde-700);
+}
+
+.com-alta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.com-alta button {
+  padding: 4px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--azul-600);
+  background: none;
+  border: 0;
+}
+
+.com-alta button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .com__grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .com__titulo {
+    flex-direction: column;
+  }
+
+  .com__busca-linha {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .com .segmentos {
+    flex-wrap: wrap;
+  }
+
+  .com .segmentos button,
+  .com-acao,
+  .com .btn-azul,
+  .com .btn-branco {
+    min-height: 44px;
+  }
+
+  .com-post__titulo {
+    font-size: 16px;
+  }
+}
