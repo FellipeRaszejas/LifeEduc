@@ -1,8 +1,5 @@
-import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import {
-  Bell,
-  ChevronDown,
   Flame,
   BookOpenCheck,
   BookOpen,
@@ -13,6 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import Topbar from '../components/topbar'
+import { lerSessao } from '../utils/sessao'
 
 // Dados fixos (sem back-end)
 const AULA_ATUAL = {
@@ -88,21 +86,6 @@ const CURSOS = [
   },
 ]
 
-// Lê o usuário salvo no login/cadastro. Sem sessão, usa um nome de demonstração.
-function lerSessao() {
-  try {
-    const bruto = localStorage.getItem('lifeeduc:usuario') || sessionStorage.getItem('lifeeduc:usuario')
-    return bruto ? JSON.parse(bruto) : null
-  } catch {
-    return null
-  }
-}
-
-function iniciais(nome) {
-  const partes = nome.trim().split(/\s+/)
-  return (partes[0][0] + (partes.length > 1 ? partes[partes.length - 1][0] : '')).toUpperCase()
-}
-
 function dataPorExtenso() {
   const texto = new Date().toLocaleDateString('pt-BR', {
     weekday: 'long',
@@ -115,42 +98,13 @@ function dataPorExtenso() {
 
 export default function Home() {
   const navigate = useNavigate()
-  const [notificacoes, setNotificacoes] = useState(false)
-
   const usuario = lerSessao()
   const nome = usuario?.nome || 'Ana Souza'
-  const perfil = usuario?.perfil || 'Estudante'
   const primeiroNome = nome.split(' ')[0]
 
   return (
     <div className="home">
-      <Topbar>
-        <div className="notificacao">
-          <button
-            type="button"
-            className="icone-btn"
-            onClick={() => setNotificacoes((v) => !v)}
-            aria-label="Notificações"
-            aria-expanded={notificacoes}
-          >
-            <Bell size={18} />
-          </button>
-          {notificacoes && (
-            <div className="notificacao__caixa" role="status">
-              Você não tem novas notificações.
-            </div>
-          )}
-        </div>
-
-        <button type="button" className="usuario" onClick={() => navigate('/perfil')}>
-          <span className="usuario__avatar">{iniciais(nome)}</span>
-          <span className="usuario__info">
-            <strong>{nome}</strong>
-            <small>{perfil} • Nível 5</small>
-          </span>
-          <ChevronDown size={14} />
-        </button>
-      </Topbar>
+      <Topbar />
 
       {/* Saudação */}
       <section className="home__titulo">

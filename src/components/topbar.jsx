@@ -1,8 +1,51 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BookOpen, Search } from 'lucide-react'
+import { BookOpen, Search, Bell, ChevronDown } from 'lucide-react'
+import { lerSessao, iniciais } from '../utils/sessao'
 
-// Barra superior das páginas: logo + busca + conteúdo livre à direita (children)
+// Sino de notificações + usuário logado (padrão da maioria das páginas)
+function AreaUsuario() {
+  const navigate = useNavigate()
+  const [notificacoes, setNotificacoes] = useState(false)
+
+  const usuario = lerSessao()
+  // Sem sessão, usa um nome de demonstração
+  const nome = usuario?.nome || 'Ana Souza'
+  const perfil = usuario?.perfil || 'Estudante'
+
+  return (
+    <>
+      <div className="notificacao">
+        <button
+          type="button"
+          className="icone-btn"
+          onClick={() => setNotificacoes((v) => !v)}
+          aria-label="Notificações"
+          aria-expanded={notificacoes}
+        >
+          <Bell size={18} />
+        </button>
+        {notificacoes && (
+          <div className="notificacao__caixa" role="status">
+            Você não tem novas notificações.
+          </div>
+        )}
+      </div>
+
+      <button type="button" className="usuario" onClick={() => navigate('/perfil')}>
+        <span className="usuario__avatar">{iniciais(nome)}</span>
+        <span className="usuario__info">
+          <strong>{nome}</strong>
+          <small>{perfil} • Nível 5</small>
+        </span>
+        <ChevronDown size={14} />
+      </button>
+    </>
+  )
+}
+
+// Barra superior: logo + busca + área da direita.
+// Sem children, mostra sino e usuário. Com children, mostra o que for passado.
 export default function Topbar({ children }) {
   const navigate = useNavigate()
   const buscaRef = useRef(null)
@@ -47,7 +90,7 @@ export default function Topbar({ children }) {
         <kbd>⌘ K</kbd>
       </form>
 
-      <div className="topbar__direita">{children}</div>
+      <div className="topbar__direita">{children ?? <AreaUsuario />}</div>
     </header>
   )
 }
