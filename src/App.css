@@ -5426,3 +5426,390 @@ button {
     grid-template-columns: 1fr;
   }
 }
+/* ==========================================================================
+   PÁGINA BIBLIOTECA (colar no fim do App.css)
+   Usa .campo, .segmentos, .tag, .btn-branco, .btn-contorno, .icone-btn,
+   .modal* e .sr-only já definidos nas outras páginas.
+   ========================================================================== */
+.bib {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bib__titulo {
+  margin-bottom: 16px;
+}
+
+.bib__titulo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.bib .btn-azul,
+.bib .btn-contorno,
+.bib .btn-branco {
+  text-decoration: none;
+}
+
+/* Filtros */
+.bib__filtros {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px 190px;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.bib__filtros label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Banner de revisão */
+.bib-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  color: var(--verde-700);
+  background: var(--verde-100);
+  border: 1px solid #cdeadb;
+  border-radius: var(--raio);
+}
+
+.bib-banner__icone {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+
+.bib-banner__texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.bib-banner__texto h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.bib-banner__texto p {
+  margin-top: 3px;
+  font-size: 11.5px;
+  color: var(--texto-suave);
+}
+
+.bib-banner .btn-branco {
+  color: var(--texto);
+  box-shadow: 0 0 0 1px var(--borda);
+}
+
+/* Abas e ordem */
+.bib__abas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.bib .segmentos {
+  flex-wrap: wrap;
+}
+
+.bib__ordem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--texto-suave);
+}
+
+.bib__ordem select {
+  padding: 4px 16px 4px 4px;
+  font-size: 10.5px;
+  color: var(--texto-suave);
+  background: none;
+  border: 0;
+  outline-offset: 2px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.bib__ordem svg {
+  position: absolute;
+  right: 2px;
+  pointer-events: none;
+}
+
+.bib__aviso {
+  min-height: 0;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: var(--azul-600);
+}
+
+.bib__aviso:empty {
+  display: none;
+}
+
+.bib__vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--texto-suave);
+}
+
+/* Grade de cartões */
+.bib__grade {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bib-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.bib-card__capa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 92px;
+  padding: 16px 18px;
+}
+
+.bib-card__capa p {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.bib-card__capa-icone {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  background: var(--branco);
+  border-radius: 12px;
+}
+
+.bib-card__capa--azul {
+  color: var(--azul-600);
+  background: var(--azul-100);
+}
+
+.bib-card__capa--roxo {
+  color: var(--roxo-600);
+  background: var(--roxo-100);
+}
+
+.bib-card__capa--verde {
+  color: var(--verde-700);
+  background: var(--verde-100);
+}
+
+.bib-card__corpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 14px 16px 14px;
+}
+
+.bib-card__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.bib-card__salvar {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin: -4px -6px -4px 0;
+  color: var(--texto-suave);
+  background: none;
+  border: 0;
+  border-radius: 8px;
+}
+
+.bib-card__salvar:hover {
+  background: var(--fundo);
+}
+
+.bib-card__salvar.ativo {
+  color: var(--azul-600);
+}
+
+.bib-card__corpo h3 {
+  margin: 10px 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.bib-card__desc {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+.bib-card__formato {
+  margin-top: 10px;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.bib-card__formato--azul {
+  color: var(--azul-600);
+}
+
+.bib-card__formato--verde {
+  color: var(--verde-700);
+}
+
+.bib-card__meta {
+  margin-top: 4px;
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+.bib-card__rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.bib-card__rodape .btn-contorno {
+  height: 34px;
+  font-size: 11.5px;
+}
+
+.bib-card__baixar {
+  color: var(--azul-600);
+}
+
+/* Janela de prévia */
+.bib-modal__corpo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.bib-modal__corpo > p {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.bib-modal__corpo dl {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--fundo);
+  border-radius: var(--raio-campo);
+}
+
+.bib-modal__corpo dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.bib-modal__corpo dt {
+  color: var(--texto-suave);
+}
+
+.bib-modal__corpo dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.bib-modal__corpo .bib-modal__nota {
+  font-size: 10.5px;
+  color: #9a5b05;
+}
+
+.bib-modal__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .bib__filtros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bib__filtros > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .bib__grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .bib__filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .bib__grade {
+    grid-template-columns: 1fr;
+  }
+
+  .bib-banner {
+    flex-wrap: wrap;
+  }
+
+  .bib-banner .btn-branco {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bib .btn-branco,
+  .bib-card__rodape .btn-contorno,
+  .bib .segmentos button {
+    min-height: 44px;
+  }
+
+  .bib-card__salvar,
+  .bib-card__baixar {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

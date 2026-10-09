@@ -15,6 +15,7 @@ import PainelEducador from './pages/PainelEducador'
 import Perfil from './pages/Perfil'
 import Planejamento from './pages/Planejamento'
 import TutorVirtual from './pages/TutorVirtual'
+import Biblioteca from './pages/Biblioteca'
 
 // Páginas ainda sem arquivo (ex.: Biblioteca) e rotas inexistentes
 function EmConstrucao() {
@@ -36,6 +37,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/conta" element={<Conta />} />
+          <Route path="/biblioteca" element={<Biblioteca />} />
           <Route path="/curso" element={<Curso />} />
           <Route path="/aulas" element={<Aulas />} />
           <Route path="/exercicios" element={<Exercicios />} />
