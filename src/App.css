@@ -1599,3 +1599,450 @@ button {
     flex-wrap: wrap;
   }
 }
+/* ==========================================================================
+   PÁGINA PLANEJAMENTO (colar no fim do App.css)
+   ========================================================================== */
+.plan {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.plan__topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.plan__topo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.btn-azul {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  height: 40px;
+  padding: 0 18px;
+  font-weight: 600;
+  color: var(--branco);
+  background: var(--azul-600);
+  border: 0;
+  border-radius: var(--raio-campo);
+  transition: background 0.15s;
+}
+
+.btn-azul:hover {
+  background: var(--azul-700);
+}
+
+/* Meta da semana */
+.plan__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  color: var(--verde-700);
+  background: var(--verde-100);
+  border: 1px solid #cdeadb;
+  border-radius: var(--raio);
+}
+
+.plan__meta-texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.plan__meta-texto h2 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.plan__meta-texto p {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.plan__meta-pct {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.plan__meta .btn-branco {
+  color: var(--texto);
+}
+
+/* Grade principal */
+.plan__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+.plan__lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Calendário */
+.calendario__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.calendario__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendario__nav h2 {
+  min-width: 150px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.segmentos {
+  display: flex;
+  gap: 4px;
+}
+
+.segmentos button {
+  padding: 4px 11px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--texto-suave);
+  background: var(--fundo);
+  border: 0;
+  border-radius: 999px;
+}
+
+.segmentos button:hover {
+  background: var(--azul-100);
+}
+
+.segmentos button.ativo {
+  font-weight: 600;
+  color: var(--azul-600);
+  background: var(--azul-100);
+}
+
+.calendario__cabecalho,
+.calendario__grade {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.calendario__cabecalho {
+  margin-bottom: 6px;
+  font-size: 8.5px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.plan-dia {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 62px;
+  padding: 6px 7px;
+  text-align: left;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.calendario__grade--semana .plan-dia {
+  min-height: 150px;
+}
+
+.plan-dia:hover {
+  border-color: #b9c8ee;
+}
+
+.plan-dia__num {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.plan-dia--fora {
+  background: var(--fundo);
+}
+
+.plan-dia--fora .plan-dia__num {
+  color: #aab2c5;
+}
+
+.plan-dia--hoje {
+  background: var(--azul-100);
+  border-color: var(--azul-600);
+}
+
+.plan-dia--hoje .plan-dia__num {
+  color: var(--azul-600);
+}
+
+.plan-dia--selecionado {
+  border-color: var(--azul-600);
+  box-shadow: 0 0 0 2px rgba(37, 87, 230, 0.18);
+}
+
+.chip {
+  display: block;
+  overflow: hidden;
+  font-size: 8.5px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip--azul {
+  color: var(--azul-600);
+}
+
+.chip--roxo {
+  color: var(--roxo-600);
+}
+
+.chip--verde {
+  color: var(--verde-700);
+}
+
+.chip--feita {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.chip--mais {
+  color: var(--texto-suave);
+}
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.legenda .tag {
+  padding: 3px 12px;
+}
+
+/* Lateral */
+.lateral__titulo--grande {
+  font-size: 16px;
+}
+
+.tag--margem {
+  margin: 10px 0 14px;
+}
+
+.plan__vazio {
+  margin-bottom: 12px;
+  font-size: 11.5px;
+  color: var(--texto-suave);
+}
+
+.tarefa-dia {
+  padding-top: 4px;
+}
+
+.tarefa-dia + .tarefa-dia {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--borda);
+}
+
+.tarefa-dia h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tarefa-dia p {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+
+.tarefa-dia .tarefa-dia__ok {
+  font-weight: 600;
+  color: var(--verde-700);
+}
+
+.tarefa-dia__acoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.link--perigo {
+  color: var(--vermelho-600);
+}
+
+.semana {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 260px;
+  margin: 12px 0 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.semana li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.semana input {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin: 2px 0 0;
+  accent-color: var(--verde-700);
+}
+
+.cartao .semana label {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.semana strong {
+  font-size: 11.5px;
+}
+
+.semana small {
+  font-size: 10px;
+  color: var(--texto-suave);
+}
+
+.semana .semana__ok {
+  color: var(--verde-700);
+}
+
+/* Descanso */
+.plan__descanso {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  color: var(--texto-suave);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+.plan__descanso div {
+  flex: 1;
+}
+
+.plan__descanso h2 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.plan__descanso p {
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+/* Janelas (modal) */
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(18, 48, 107, 0.35);
+}
+
+.modal {
+  width: min(420px, 100%);
+  max-height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  background: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: 0 20px 50px rgba(18, 48, 107, 0.25);
+}
+
+.modal__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__topo h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.modal__form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .plan__grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .plan__topo,
+  .plan__meta,
+  .plan__descanso {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendario__topo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendario__grade {
+    gap: 3px;
+  }
+
+  .plan-dia {
+    min-height: 54px;
+    padding: 4px;
+  }
+
+  .calendario__grade--semana {
+    grid-template-columns: 1fr;
+  }
+
+  .calendario__grade--semana .plan-dia {
+    min-height: 56px;
+  }
+}
