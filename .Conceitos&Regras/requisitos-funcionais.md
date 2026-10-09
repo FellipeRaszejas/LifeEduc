@@ -1,132 +1,196 @@
-LifeEduc — Requisitos Funcionais
-1. Introdução
-Este documento apresenta os requisitos funcionais do LifeEduc, descrevendo as funcionalidades e operações que o sistema deverá disponibilizar aos seus usuários.
+# LifeEduc — Requisitos Funcionais
 
-Os requisitos foram definidos considerando as necessidades dos alunos e professores, abrangendo cadastro, autenticação, acesso a conteúdos educacionais, acompanhamento acadêmico e criação de materiais e atividades.
+| | |
+|---|---|
+| **Projeto** | LifeEduc |
+| **Documento** | Requisitos Funcionais |
+| **Versão** | 1.0 |
+| **Alinhamento** | ODS 4 — Educação de Qualidade |
 
-2. Lista de requisitos funcionais
-ID	Requisito funcional
-RF01	O sistema deve permitir que o usuário realize cadastro.
-RF02	O sistema deve permitir que o usuário faça login utilizando e-mail e senha.
-RF03	O sistema deve permitir que o usuário edite seus dados pessoais.
-RF04	O sistema deve permitir que o aluno visualize suas disciplinas.
-RF05	O sistema deve permitir que o aluno acesse aulas e materiais didáticos.
-RF06	O sistema deve apresentar o resultado das atividades realizadas.
-RF07	O sistema deve registrar o progresso do aluno nas disciplinas.
-RF08	O sistema deve permitir que o aluno consulte seu histórico de atividades.
-RF09	O sistema deve permitir que o aluno pesquise conteúdos por palavra-chave.
-RF10	O sistema deve permitir que o professor cadastre aulas e materiais.
-RF11	O sistema deve permitir que o professor crie atividades para os alunos.
-3. Detalhamento dos requisitos funcionais
-RF01 — Cadastro de usuário
-Descrição: O sistema deve permitir que o usuário crie uma conta na plataforma.
+Este documento descreve **o que o sistema deve fazer**: as funcionalidades e operações disponibilizadas a alunos e professores. Elas servem de base para as telas, os componentes do front-end, as regras de interação e as futuras integrações com o back-end.
 
-Comportamento esperado:
+**Documentos relacionados:** [User Stories](./user-stories.md) · [Requisitos Não Funcionais](./requisitos-nao-funcionais.md)
 
-Disponibilizar um formulário de cadastro.
-Validar os campos obrigatórios.
-Informar quando os dados estiverem incorretos.
-Confirmar a conclusão do cadastro.
-RF02 — Login de usuário
-Descrição: O sistema deve permitir que o usuário acesse sua conta utilizando e-mail e senha.
+## Sumário
 
-Comportamento esperado:
+- [Visão geral](#visão-geral)
+- [Requisitos por área](#requisitos-por-área)
+  - [Cadastro e autenticação](#cadastro-e-autenticação)
+  - [Perfil do usuário](#perfil-do-usuário)
+  - [Disciplinas e conteúdos](#disciplinas-e-conteúdos)
+  - [Avaliação e acompanhamento](#avaliação-e-acompanhamento)
+  - [Área do professor](#área-do-professor)
+- [Rastreabilidade](#rastreabilidade)
+- [Considerações finais](#considerações-finais)
 
-Disponibilizar campos para e-mail e senha.
-Validar as credenciais.
-Exibir uma mensagem em caso de falha na autenticação.
-Permitir o acesso às funcionalidades autorizadas após o login.
-RF03 — Edição de dados pessoais
-Descrição: O sistema deve permitir que o usuário atualize suas informações pessoais.
+## Visão geral
 
-Comportamento esperado:
+| ID | Requisito | Perfil | Área |
+|---|---|---|---|
+| [RF01](#rf01--cadastro-de-usuário) | Realizar cadastro | Usuário | Cadastro e autenticação |
+| [RF02](#rf02--login-de-usuário) | Fazer login com e-mail e senha | Usuário | Cadastro e autenticação |
+| [RF03](#rf03--edição-de-dados-pessoais) | Editar dados pessoais | Usuário | Perfil do usuário |
+| [RF04](#rf04--visualização-de-disciplinas) | Visualizar disciplinas | Aluno | Disciplinas e conteúdos |
+| [RF05](#rf05--acesso-às-aulas-e-aos-materiais-didáticos) | Acessar aulas e materiais didáticos | Aluno | Disciplinas e conteúdos |
+| [RF06](#rf06--resultados-das-atividades) | Ver o resultado das atividades realizadas | Aluno | Avaliação e acompanhamento |
+| [RF07](#rf07--registro-do-progresso-acadêmico) | Registrar o progresso nas disciplinas | Aluno | Avaliação e acompanhamento |
+| [RF08](#rf08--histórico-de-atividades) | Consultar o histórico de atividades | Aluno | Avaliação e acompanhamento |
+| [RF09](#rf09--pesquisa-de-conteúdos) | Pesquisar conteúdos por palavra-chave | Aluno | Disciplinas e conteúdos |
+| [RF10](#rf10--cadastro-de-aulas-e-materiais-pelo-professor) | Cadastrar aulas e materiais | Professor | Área do professor |
+| [RF11](#rf11--criação-de-atividades-pelo-professor) | Criar atividades para os alunos | Professor | Área do professor |
 
-Exibir os dados cadastrados.
-Permitir a edição dos campos autorizados.
-Validar as informações alteradas.
-Salvar as alterações e informar o resultado da operação.
-RF04 — Visualização de disciplinas
-Descrição: O sistema deve permitir que o aluno consulte as disciplinas associadas à sua conta.
+## Requisitos por área
 
-Comportamento esperado:
+### Cadastro e autenticação
 
-Apresentar as disciplinas disponíveis.
-Organizar as informações para facilitar a identificação.
-Permitir o acesso aos conteúdos de uma disciplina selecionada.
-RF05 — Acesso às aulas e aos materiais didáticos
-Descrição: O sistema deve permitir que o aluno acesse as aulas e os materiais disponibilizados nas disciplinas.
+#### RF01 — Cadastro de usuário
 
-Comportamento esperado:
+O sistema deve permitir que o usuário crie uma conta na plataforma.
 
-Apresentar os conteúdos disponíveis.
-Organizar aulas e materiais por disciplina.
-Permitir a abertura ou visualização dos conteúdos.
-Informar quando um material estiver indisponível.
-RF06 — Apresentação dos resultados das atividades
-Descrição: O sistema deve apresentar os resultados das atividades realizadas pelos alunos.
+**Comportamento esperado**
 
-Comportamento esperado:
+- Disponibilizar um formulário de cadastro.
+- Validar os campos obrigatórios.
+- Informar quando os dados estiverem incorretos.
+- Confirmar a conclusão do cadastro.
 
-Recuperar os resultados registrados.
-Associar os resultados às respectivas atividades.
-Apresentar as informações de maneira compreensível.
-RF07 — Registro do progresso acadêmico
-Descrição: O sistema deve registrar o progresso do aluno nas disciplinas.
+#### RF02 — Login de usuário
 
-Comportamento esperado:
+O sistema deve permitir que o usuário acesse sua conta utilizando e-mail e senha.
 
-Registrar as informações de progresso conforme as regras definidas pela plataforma.
-Associar o progresso à disciplina correspondente.
-Atualizar os indicadores conforme novos registros forem realizados.
-RF08 — Histórico de atividades
-Descrição: O sistema deve permitir que o aluno consulte seu histórico de atividades.
+**Comportamento esperado**
 
-Comportamento esperado:
+- Disponibilizar campos para e-mail e senha.
+- Validar as credenciais.
+- Exibir uma mensagem em caso de falha na autenticação.
+- Permitir o acesso às funcionalidades autorizadas após o login.
 
-Apresentar as atividades registradas.
-Exibir informações disponíveis sobre cada atividade.
-Permitir a consulta dos registros anteriores.
-RF09 — Pesquisa de conteúdos
-Descrição: O sistema deve permitir que o aluno encontre conteúdos utilizando palavras-chave.
+### Perfil do usuário
 
-Comportamento esperado:
+#### RF03 — Edição de dados pessoais
 
-Disponibilizar um campo de pesquisa.
-Processar o termo informado.
-Exibir conteúdos correspondentes.
-Informar quando nenhum resultado for encontrado.
-RF10 — Cadastro de aulas e materiais pelo professor
-Descrição: O sistema deve permitir que o professor cadastre aulas e disponibilize materiais didáticos.
+O sistema deve permitir que o usuário atualize suas informações pessoais.
 
-Comportamento esperado:
+**Comportamento esperado**
 
-Disponibilizar uma interface para cadastro de aulas.
-Permitir o preenchimento dos dados do conteúdo.
-Permitir a inclusão ou disponibilização de materiais.
-Associar os conteúdos às disciplinas correspondentes.
-Validar os dados antes de concluir o cadastro.
-RF11 — Criação de atividades pelo professor
-Descrição: O sistema deve permitir que o professor crie atividades destinadas aos alunos.
+- Exibir os dados cadastrados.
+- Permitir a edição dos campos autorizados.
+- Validar as informações alteradas.
+- Salvar as alterações e informar o resultado da operação.
 
-Comportamento esperado:
+### Disciplinas e conteúdos
 
-Disponibilizar uma interface de criação de atividades.
-Permitir o preenchimento do título e das instruções.
-Permitir a associação da atividade a uma disciplina.
-Validar os dados informados.
-Disponibilizar a atividade conforme as regras de acesso definidas.
-4. Relação entre requisitos e funcionalidades
-Área do sistema	Requisitos relacionados
-Cadastro e autenticação	RF01, RF02
-Perfil do usuário	RF03
-Disciplinas e conteúdos	RF04, RF05, RF09
-Avaliação e acompanhamento	RF06, RF07, RF08
-Área do professor	RF10, RF11
-5. Considerações finais
-Os requisitos funcionais estabelecem as operações que deverão ser implementadas no LifeEduc. Eles servirão como base para a definição das telas, dos componentes do Front-end, das regras de interação e das futuras integrações com o Back-end.
+#### RF04 — Visualização de disciplinas
 
-A implementação deverá garantir que as funcionalidades respeitem os perfis de acesso e apresentem informações coerentes para cada usuário.
+O sistema deve permitir que o aluno consulte as disciplinas associadas à sua conta.
 
-Projeto: LifeEduc
-Documento: Requisitos Funcionais
-Versão: 1.0
+**Comportamento esperado**
+
+- Apresentar as disciplinas disponíveis.
+- Organizar as informações para facilitar a identificação.
+- Permitir o acesso aos conteúdos de uma disciplina selecionada.
+
+#### RF05 — Acesso às aulas e aos materiais didáticos
+
+O sistema deve permitir que o aluno acesse as aulas e os materiais disponibilizados nas disciplinas.
+
+**Comportamento esperado**
+
+- Apresentar os conteúdos disponíveis.
+- Organizar aulas e materiais por disciplina.
+- Permitir a abertura ou visualização dos conteúdos.
+- Informar quando um material estiver indisponível.
+
+#### RF09 — Pesquisa de conteúdos
+
+O sistema deve permitir que o aluno encontre conteúdos utilizando palavras-chave.
+
+**Comportamento esperado**
+
+- Disponibilizar um campo de pesquisa.
+- Processar o termo informado.
+- Exibir conteúdos correspondentes.
+- Informar quando nenhum resultado for encontrado.
+
+### Avaliação e acompanhamento
+
+#### RF06 — Resultados das atividades
+
+O sistema deve apresentar os resultados das atividades realizadas pelos alunos.
+
+**Comportamento esperado**
+
+- Recuperar os resultados registrados.
+- Associar os resultados às respectivas atividades.
+- Apresentar as informações de maneira compreensível.
+
+#### RF07 — Registro do progresso acadêmico
+
+O sistema deve registrar o progresso do aluno nas disciplinas.
+
+**Comportamento esperado**
+
+- Registrar as informações de progresso conforme as regras definidas pela plataforma.
+- Associar o progresso à disciplina correspondente.
+- Atualizar os indicadores conforme novos registros forem realizados.
+
+#### RF08 — Histórico de atividades
+
+O sistema deve permitir que o aluno consulte seu histórico de atividades.
+
+**Comportamento esperado**
+
+- Apresentar as atividades registradas.
+- Exibir informações disponíveis sobre cada atividade.
+- Permitir a consulta dos registros anteriores.
+
+### Área do professor
+
+#### RF10 — Cadastro de aulas e materiais pelo professor
+
+O sistema deve permitir que o professor cadastre aulas e disponibilize materiais didáticos.
+
+**Comportamento esperado**
+
+- Disponibilizar uma interface para cadastro de aulas.
+- Permitir o preenchimento dos dados do conteúdo.
+- Permitir a inclusão ou disponibilização de materiais.
+- Associar os conteúdos às disciplinas correspondentes.
+- Validar os dados antes de concluir o cadastro.
+
+#### RF11 — Criação de atividades pelo professor
+
+O sistema deve permitir que o professor crie atividades destinadas aos alunos.
+
+**Comportamento esperado**
+
+- Disponibilizar uma interface de criação de atividades.
+- Permitir o preenchimento do título e das instruções.
+- Permitir a associação da atividade a uma disciplina.
+- Validar os dados informados.
+- Disponibilizar a atividade conforme as regras de acesso definidas.
+
+## Rastreabilidade
+
+Relação entre cada requisito funcional, a user story que o originou e a tela do protótipo em React onde ele aparece.
+
+| Requisito | User story | Tela do protótipo |
+|---|---|---|
+| RF01 | [US01](./user-stories.md#us01--cadastro-de-usuário) | `Conta.jsx` |
+| RF02 | [US02](./user-stories.md#us02--login) | `Conta.jsx` |
+| RF03 | [US03](./user-stories.md#us03--edição-de-dados-pessoais) | `Perfil.jsx` |
+| RF04 | [US04](./user-stories.md#us04--visualização-de-disciplinas) | `Curso.jsx` |
+| RF05 | [US05](./user-stories.md#us05--acesso-às-aulas-e-aos-materiais-didáticos) | `Aulas.jsx`, `Biblioteca.jsx` |
+| RF06 | [US06](./user-stories.md#us06--consulta-dos-resultados-das-atividades) | `Exercicios.jsx` |
+| RF07 | [US07](./user-stories.md#us07--acompanhamento-do-progresso-acadêmico) | `Desempenho.jsx` |
+| RF08 | [US08](./user-stories.md#us08--histórico-de-atividades) | `Desempenho.jsx` |
+| RF09 | [US09](./user-stories.md#us09--pesquisa-de-conteúdos) | `Curso.jsx`, `Biblioteca.jsx` |
+| RF10 | [US10](./user-stories.md#us10--cadastro-de-aulas-e-materiais-pelo-professor) | `PainelEducador.jsx` |
+| RF11 | [US11](./user-stories.md#us11--criação-de-atividades-pelo-professor) | `PainelEducador.jsx` |
+
+> [!NOTE]
+> A coluna "Tela do protótipo" indica onde cada requisito é demonstrado na interface. Os dados exibidos nas telas são fictícios até a integração com o back-end.
+
+## Considerações finais
+
+A implementação deve garantir que as funcionalidades respeitem os perfis de acesso e apresentem informações coerentes para cada usuário. Os critérios de qualidade (acessibilidade, responsividade, segurança) estão nos [Requisitos Não Funcionais](./requisitos-nao-funcionais.md).
