@@ -4837,3 +4837,337 @@ button {
 [data-tamanho-texto='grande'] .app-main {
   zoom: 1.2;
 }
+/* ==========================================================================
+   PÁGINA PAINEL DO EDUCADOR (colar no fim do App.css)
+   Usa .metricas/.metrica (Home), .modal* (Planejamento), .tag--amarela e
+   .sr-only (Oportunidades), .campo, .duas-colunas e .link.
+   ========================================================================== */
+.edu {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.edu__titulo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.edu__titulo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.edu .btn-azul {
+  text-decoration: none;
+}
+
+/* Contexto da turma */
+.edu__contexto {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin-bottom: 16px;
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+.edu__curso {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--azul-600);
+  background: var(--azul-100);
+  border-radius: 999px;
+}
+
+.edu__curso select {
+  padding: 4px 24px 4px 10px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--azul-600);
+  background: none;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  appearance: none;
+}
+
+.edu__curso svg {
+  position: absolute;
+  right: 9px;
+  pointer-events: none;
+}
+
+.edu__atualizado {
+  margin-left: auto;
+}
+
+.edu .metricas {
+  margin-bottom: 16px;
+}
+
+/* Grade */
+.edu__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 16px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.edu__grade > * {
+  min-width: 0;
+}
+
+.edu__cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.edu__cartao-topo h2,
+.edu__h2 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.edu__cartao-topo .link {
+  font-size: 10.5px;
+}
+
+.edu__sub {
+  margin: 6px 0 0;
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+/* Tabelas */
+.edu__rolagem {
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.edu__tabela {
+  width: 100%;
+  min-width: 440px;
+  border-collapse: collapse;
+  font-size: 11.5px;
+}
+
+.edu__tabela--alunos {
+  min-width: 520px;
+}
+
+.edu__tabela thead th {
+  padding: 8px 8px 8px 0;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  border-bottom: 1px solid var(--borda);
+}
+
+.edu__tabela tbody th,
+.edu__tabela td {
+  padding: 11px 8px 11px 0;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--borda);
+}
+
+.edu__tabela tbody tr:last-child th,
+.edu__tabela tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.edu__tabela tbody th {
+  font-weight: 400;
+}
+
+.edu__tabela tbody th strong {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.edu__tabela tbody th small {
+  display: block;
+  margin-top: 2px;
+  font-size: 9.5px;
+  color: var(--texto-suave);
+}
+
+.edu__tabela td {
+  color: var(--texto);
+}
+
+.edu__tabela td.edu__azul {
+  color: var(--azul-600);
+}
+
+.edu__tabela td.edu__verde {
+  color: var(--verde-700);
+}
+
+.edu__tabela .link {
+  font-size: 10.5px;
+}
+
+.edu__aluno {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.edu__avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--roxo-600);
+  background: var(--roxo-100);
+  border-radius: 50%;
+}
+
+.edu__nota {
+  margin-top: 10px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+/* Presença */
+.edu-barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 150px;
+  margin: 18px 0 12px;
+}
+
+.edu-barras__coluna {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+}
+
+.edu-barras__valor,
+.edu-barras__dia {
+  font-size: 9.5px;
+  color: var(--texto-suave);
+}
+
+.edu-barras__trilho {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.edu-barras__barra {
+  width: 100%;
+  min-height: 4px;
+  background: #c3d1f7;
+  border-radius: 6px 6px 3px 3px;
+}
+
+.edu-barras__barra--hoje {
+  background: var(--azul-600);
+}
+
+.edu__resumo {
+  font-size: 10.5px;
+  color: var(--verde-700);
+}
+
+/* Próximo cuidado */
+.edu-cuidado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--roxo-100);
+  border: 1px solid #e0d3f5;
+  border-radius: var(--raio);
+}
+
+.edu-cuidado__tag {
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--roxo-600);
+  background: var(--branco);
+  border-radius: 999px;
+}
+
+.edu-cuidado h2 {
+  margin: 12px 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.edu-cuidado p {
+  margin-bottom: 16px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.edu-cuidado .btn-azul {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.edu-cuidado small {
+  margin-top: 12px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--roxo-600);
+}
+
+@media (max-width: 900px) {
+  .edu__grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .edu__titulo {
+    flex-direction: column;
+  }
+
+  .edu__atualizado {
+    margin-left: 0;
+  }
+
+  .edu .btn-azul,
+  .edu__curso select {
+    min-height: 44px;
+  }
+
+  .edu .edu__tabela .link,
+  .edu__cartao-topo .link {
+    min-height: 44px;
+  }
+}
