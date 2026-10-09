@@ -2046,3 +2046,483 @@ button {
     min-height: 56px;
   }
 }
+/* ==========================================================================
+   PÁGINA TUTOR VIRTUAL (colar no fim do App.css)
+   ========================================================================== */
+.tutor {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tutor__titulo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.tutor__titulo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Só aparece em telas menores */
+.tutor__navmobile {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tutor__grade {
+  display: grid;
+  grid-template-columns: 215px minmax(0, 1fr) 250px;
+  gap: 16px;
+  align-items: start;
+}
+
+/* ---------- Histórico ---------- */
+.tutor__historico {
+  padding: 14px;
+}
+
+.tutor__nova {
+  margin-top: 0;
+  height: 38px;
+  font-size: 12px;
+}
+
+.tutor-hist__grupo {
+  margin-top: 16px;
+}
+
+.tutor-hist__grupo h2 {
+  margin-bottom: 6px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.tutor-hist__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: 9px 10px;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+}
+
+.tutor-hist__item:hover {
+  background: var(--fundo);
+}
+
+.tutor-hist__item--ativo {
+  background: var(--azul-100);
+}
+
+.tutor-hist__item strong {
+  font-size: 11.5px;
+  color: var(--texto);
+}
+
+.tutor-hist__item--ativo strong {
+  color: var(--azul-600);
+}
+
+.tutor-hist__item small {
+  font-size: 10px;
+  color: var(--texto-suave);
+}
+
+.tutor-hist__privacidade {
+  margin-top: 18px;
+  padding-top: 14px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+  border-top: 1px solid var(--borda);
+}
+
+/* ---------- Conversa ---------- */
+.tutor__chat {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px 18px 12px;
+}
+
+.tutor-chat__topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.tutor-chat__icone {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  color: var(--roxo-600);
+  background: var(--roxo-100);
+  border-radius: 10px;
+}
+
+.tutor-chat__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tutor-chat__info h2 {
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tutor-chat__info p {
+  margin-top: 2px;
+  font-size: 10.5px;
+  color: var(--verde-700);
+}
+
+.tutor-chat__menu {
+  position: relative;
+}
+
+.tutor-chat__opcoes {
+  top: 38px;
+  bottom: auto;
+  min-width: 150px;
+}
+
+.tutor-chat__opcoes button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.tutor-chat__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 320px;
+  max-height: 460px;
+  padding: 16px 2px;
+  overflow-y: auto;
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 82%;
+}
+
+.msg--voce {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.msg--tutor {
+  align-self: flex-start;
+}
+
+.msg__meta {
+  font-size: 9.5px;
+  color: var(--texto-suave);
+}
+
+.msg__balao {
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  border-radius: 10px;
+}
+
+.msg--voce .msg__balao {
+  background: var(--azul-100);
+}
+
+.msg--tutor .msg__balao {
+  background: #eff2f9;
+}
+
+.msg__feedback {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--texto-suave);
+}
+
+.msg__feedback button {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: var(--texto-suave);
+  background: none;
+  border: 0;
+  border-radius: 6px;
+}
+
+.msg__feedback button:hover,
+.msg__feedback button.ativo {
+  color: var(--azul-600);
+  background: var(--azul-100);
+}
+
+.msg__feedback span {
+  margin-left: 4px;
+}
+
+.tutor-aviso {
+  align-self: center;
+  max-width: 90%;
+  padding: 8px 12px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--texto-suave);
+  background: var(--fundo);
+  border: 1px dashed var(--borda);
+  border-radius: 8px;
+}
+
+.tutor-vazio {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 12px;
+  text-align: center;
+}
+
+.tutor-vazio h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tutor-vazio p {
+  max-width: 44ch;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+.tutor-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tutor-vazio .tutor-chips {
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.chip-acao {
+  padding: 5px 12px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--roxo-600);
+  background: var(--roxo-100);
+  border: 1px solid #e0d3f5;
+  border-radius: 999px;
+}
+
+.chip-acao:hover {
+  background: #e7dbf8;
+}
+
+/* Compositor */
+.tutor-compositor {
+  padding: 10px 12px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tutor-compositor:focus-within {
+  border-color: var(--azul-600);
+  box-shadow: 0 0 0 2px rgba(37, 87, 230, 0.18);
+}
+
+.tutor-compositor textarea {
+  width: 100%;
+  min-height: 44px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  resize: none;
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+.tutor-compositor__rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tutor-compositor__rodape small {
+  font-size: 9.5px;
+  color: var(--texto-suave);
+}
+
+.tutor-compositor .btn-azul:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tutor-chat__nota {
+  margin-top: 10px;
+  font-size: 10px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+/* ---------- Contexto ---------- */
+.tutor__contexto {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.tutor-ctx__titulo {
+  margin: 12px 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tutor-ctx__sub {
+  margin-bottom: 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+.tutor__revisar {
+  margin-top: 0;
+  height: 38px;
+  font-size: 12px;
+}
+
+.tutor-dica {
+  padding: 18px;
+  color: var(--verde-700);
+  background: var(--verde-100);
+  border: 1px solid #cdeadb;
+  border-radius: var(--raio);
+}
+
+.tutor-dica h2 {
+  margin: 10px 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.tutor-dica p {
+  margin-bottom: 14px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.tutor-dica .btn-azul {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Responsivo
+   Tablet: histórico recolhido e contexto em aba.
+   Celular: cabeçalho, conversa e compositor; histórico no menu e contexto
+   abaixo da conversa.
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .tutor__grade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tutor__navmobile {
+    display: flex;
+  }
+
+  .tutor__historico {
+    display: none;
+  }
+
+  .tutor__historico--aberto {
+    display: block;
+  }
+
+  .tutor--aba-contexto .tutor__chat,
+  .tutor--aba-conversa .tutor__contexto {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .tutor__titulo {
+    flex-direction: column;
+  }
+
+  /* Sem abas: a conversa e o contexto aparecem um abaixo do outro */
+  .tutor__abas {
+    display: none;
+  }
+
+  .tutor--aba-contexto .tutor__chat {
+    display: flex;
+  }
+
+  .tutor--aba-conversa .tutor__contexto {
+    display: flex;
+  }
+
+  .msg {
+    max-width: 94%;
+  }
+
+  .tutor-chat__lista {
+    max-height: 380px;
+  }
+
+  /* Áreas de toque de 44 px */
+  .tutor .btn,
+  .tutor .btn-azul,
+  .tutor .btn-contorno,
+  .tutor .icone-btn,
+  .tutor .chip-acao,
+  .tutor .tutor-hist__item,
+  .tutor .msg__feedback button {
+    min-height: 44px;
+  }
+
+  .tutor .icone-btn,
+  .tutor .msg__feedback button {
+    min-width: 44px;
+  }
+
+  .tutor-compositor__rodape small {
+    display: none;
+  }
+}
