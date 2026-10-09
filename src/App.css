@@ -3770,3 +3770,312 @@ button {
     min-height: 44px;
   }
 }
+/* ==========================================================================
+   PÁGINA DESEMPENHO (colar no fim do App.css)
+   Usa .metricas/.metrica da Home, .segmentos do Planejamento
+   e .sr-only da página Oportunidades.
+   ========================================================================== */
+.des {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.des__topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.des__topo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.des .btn-contorno,
+.des .btn-azul {
+  text-decoration: none;
+}
+
+.des__filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.des__atualizado {
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+.des .metricas {
+  margin-bottom: 16px;
+}
+
+/* Grade */
+.des__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 16px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.des__grade > * {
+  min-width: 0;
+}
+
+.des__cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.des__cartao-topo h2,
+.des__titulo-lateral,
+.des__titulo-tabela {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.des__legenda {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--azul-600);
+}
+
+/* Gráfico */
+.des-grafico {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.des-grafico__grade {
+  stroke: var(--borda);
+  stroke-width: 1;
+}
+
+.des-grafico__eixo {
+  font-size: 10px;
+  fill: var(--texto-suave);
+}
+
+.des-grafico__linha {
+  fill: none;
+  stroke: var(--azul-600);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.des-grafico__ponto {
+  fill: var(--azul-600);
+  stroke: var(--branco);
+  stroke-width: 2;
+}
+
+.des-grafico__balao {
+  fill: var(--azul-600);
+}
+
+.des-grafico__balao-texto {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--branco);
+}
+
+.des__resumo {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--verde-700);
+}
+
+/* Meta semanal */
+.des-anel {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 18px auto 14px;
+}
+
+.des-anel svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.des-anel__fundo,
+.des-anel__valor {
+  fill: none;
+  stroke-width: 12;
+}
+
+.des-anel__fundo {
+  stroke: var(--azul-100);
+}
+
+.des-anel__valor {
+  stroke: var(--azul-600);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.des-anel__texto {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.des-anel__texto strong {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.des-anel__texto small {
+  font-size: 10px;
+  color: var(--texto-suave);
+}
+
+.des__meta-texto {
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+/* Tabela */
+.des__tabela-rolagem {
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.des__tabela {
+  width: 100%;
+  min-width: 460px;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.des__tabela thead th {
+  padding: 10px 0;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  border-bottom: 1px solid var(--borda);
+}
+
+.des__tabela tbody th,
+.des__tabela td {
+  padding: 15px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--borda);
+}
+
+.des__tabela tbody tr:last-child th,
+.des__tabela tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.des__tabela tbody th {
+  font-weight: 600;
+}
+
+.des__tabela td {
+  font-weight: 500;
+  color: var(--texto-suave);
+}
+
+.des__tabela td.des__azul {
+  color: var(--azul-600);
+}
+
+.des__tabela td.des__verde {
+  color: var(--verde-700);
+}
+
+.des__nota {
+  margin-top: 10px;
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+/* Próximo passo */
+.des-passo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  color: var(--verde-700);
+  background: var(--verde-100);
+  border: 1px solid #cdeadb;
+  border-radius: var(--raio);
+}
+
+.des-passo__tag {
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  background: var(--branco);
+  border-radius: 999px;
+}
+
+.des-passo h2 {
+  margin: 12px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--texto);
+}
+
+.des-passo p {
+  margin-bottom: 16px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.des-passo .btn-azul {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .des__grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .des__topo {
+    flex-direction: column;
+  }
+
+  .des .segmentos button,
+  .des .btn-azul,
+  .des .btn-contorno {
+    min-height: 44px;
+  }
+
+  .des .segmentos {
+    flex-wrap: wrap;
+  }
+}
