@@ -4498,3 +4498,342 @@ button {
     font-size: 16px;
   }
 }
+/* ==========================================================================
+   PÁGINA PERFIL (colar no fim do App.css)
+   Usa .campo, .duas-colunas, .segmentos, .tag, .erro-texto e .sr-only
+   que já existem nas outras páginas.
+   ========================================================================== */
+.per {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.per__titulo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.per__titulo h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.per .btn-azul,
+.per .btn-contorno {
+  text-decoration: none;
+}
+
+.per .btn-azul:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.per__grade {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.per__lateral,
+.per__principal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.per__largo {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Identidade */
+.per-identidade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 18px 18px;
+  text-align: center;
+}
+
+.per-avatar {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--roxo-600);
+  background: var(--roxo-100);
+  border-radius: 50%;
+}
+
+.per-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.per-identidade h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.per-identidade__sub {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+.per-identidade__stats {
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+/* Você no controle */
+.per-controle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 18px;
+}
+
+.per-controle__icone {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--azul-600);
+  background: var(--azul-100);
+  border-radius: 8px;
+}
+
+.per-controle h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.per-controle p {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+/* Cartões do formulário */
+.per__cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.per__cartao-topo h2,
+.per__h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.per__h2 {
+  margin-bottom: 4px;
+}
+
+.per__estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--azul-600);
+}
+
+.per__estado--ok {
+  color: var(--verde-700);
+}
+
+.per .duas-colunas {
+  gap: 4px 14px;
+}
+
+.per .campo input[type='text'],
+.per .campo input[type='email'] {
+  font-size: 12.5px;
+}
+
+.per .campo select {
+  font-size: 12.5px;
+}
+
+/* Acessibilidade */
+.per-opcao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.per-opcao__texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.per-opcao__texto strong,
+.per-opcao--texto strong {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.per-opcao__texto small {
+  font-size: 10.5px;
+  color: var(--texto-suave);
+}
+
+.per-opcao__estado {
+  font-size: 9.5px;
+  color: var(--texto-suave);
+}
+
+.per-opcao__estado--on {
+  font-weight: 600;
+  color: var(--verde-700);
+}
+
+.per-opcao--texto {
+  justify-content: space-between;
+}
+
+.per-switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 22px;
+  padding: 0;
+  background: #c4cbdb;
+  border: 0;
+  border-radius: 999px;
+  transition: background 0.15s;
+}
+
+.per-switch[aria-checked='true'] {
+  background: var(--azul-600);
+}
+
+.per-switch__bola {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: var(--branco);
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+
+.per-switch[aria-checked='true'] .per-switch__bola {
+  transform: translateX(18px);
+}
+
+.per__previa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.per__previa p {
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+
+/* Mostra o anel de foco como exemplo, sempre visível */
+.per__foco {
+  margin-right: 4px;
+  box-shadow: 0 0 0 2px var(--branco), 0 0 0 4px var(--azul-600);
+}
+
+@media (max-width: 900px) {
+  .per__grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .per__titulo {
+    flex-direction: column;
+  }
+
+  .per .duas-colunas {
+    grid-template-columns: 1fr;
+  }
+
+  .per-opcao--texto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .per .btn-azul,
+  .per .btn-contorno,
+  .per .segmentos button {
+    min-height: 44px;
+  }
+
+  .per-switch {
+    width: 48px;
+    height: 28px;
+  }
+
+  .per-switch__bola {
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .per-switch[aria-checked='true'] .per-switch__bola {
+    transform: translateX(20px);
+  }
+}
+
+/* ==========================================================================
+   Preferências de acessibilidade salvas no Perfil
+   (aplicadas no <html> por Perfil.jsx)
+   ========================================================================== */
+[data-reduzir-movimento='true'] *,
+[data-reduzir-movimento='true'] *::before,
+[data-reduzir-movimento='true'] *::after {
+  transition: none !important;
+  animation: none !important;
+  scroll-behavior: auto !important;
+}
+
+[data-alto-contraste='true'] {
+  --texto: #0a1022;
+  --texto-suave: #2f3a56;
+  --borda: #8590ab;
+  --azul-600: #1a3fb8;
+  --verde-700: #14573a;
+}
+
+[data-tamanho-texto='ampliado'] .app-main {
+  zoom: 1.1;
+}
+
+[data-tamanho-texto='grande'] .app-main {
+  zoom: 1.2;
+}
